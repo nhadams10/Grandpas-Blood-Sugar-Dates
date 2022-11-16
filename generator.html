@@ -14,12 +14,20 @@ Start Date: <input type="date" id="date"><br>
 
     for (let i = 1; i < 65; i += 1) {
       startDate.setDate(startDate.getDate() + 1);
-      dateList += startDate.getMonth()+1 + "-" + startDate.getDate() + " _____ ";
-      if(i%4==0) {
-        dateList += '\n';
+
+      if(startDate.getMonth()<9 && startDate.getDate()<10) {
+        dateList += "0" + (startDate.getMonth()+1) + "-" + "0" + startDate.getDate() + " _____ ";
+      } else if (startDate.getMonth()<9) {
+        dateList += "0" + (startDate.getMonth()+1) + "-" + startDate.getDate() + " _____ ";
+      } else if(startDate.getDate()<10) {
+        dateList += startDate.getMonth()+1 + "-" + "0" + startDate.getDate() + " _____ ";
+      } else {
+        dateList += startDate.getMonth()+1 + "-" + startDate.getDate() + " _____ ";
       }
-    }    
-  
+      if(i%4==0) {
+        dateList += "<br><br>";
+      }
+    }
     //printing the result
     document.getElementById("output").innerHTML=dateList;
   }
