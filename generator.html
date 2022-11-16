@@ -1,0 +1,28 @@
+Start Date: <input type="date" id="date"><br>
+
+<button onclick="createDates()">
+  Generate Dates
+</button><br>
+<p id="output"></p>
+
+<script>
+
+  function createDates() {
+  
+    //var date = document.getElementById("date");
+  	var startDate = new Date("2022-11-15");
+    //var endDate = startDate.setDate(startDate.getDate() + 64);
+    var dateList = ""
+    
+    for (let i = 0; i < 64; i += 1) {
+      tempDate = startDate.setDate(startDate.getDate() + i);
+      tempMonth = tempDate.getMonth() + 1;
+      tempDay = tempDate.getDate() + 1;
+      dateList += tempMonth + "-" + tempDate + " _____ ";
+    }    
+  
+    //alert(dates);
+    document.getElementById("output").innerHTML=dateList;
+  }
+
+</script>
