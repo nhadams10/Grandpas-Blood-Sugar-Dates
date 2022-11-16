@@ -7,12 +7,13 @@ Start Date: <input type="date" id="date"><br>
 
 <script>
 
+  
   function createDates() {
   
     //var date = document.getElementById("date");
   	var startDate = new Date("2022-11-15");
     //var endDate = startDate.setDate(startDate.getDate() + 64);
-    var dateList = ""
+    var dateList = "test";
     
     for (let i = 0; i < 64; i += 1) {
       tempDate = startDate.setDate(startDate.getDate() + i);
@@ -22,6 +23,7 @@ Start Date: <input type="date" id="date"><br>
     }    
   
     //alert(dates);
+    var dateList = "Test2";
     document.getElementById("output").innerHTML=dateList;
   }
 
