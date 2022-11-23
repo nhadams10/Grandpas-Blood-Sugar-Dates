@@ -11,7 +11,7 @@ Start Date: <input type="date" id="date"><br>
   1.&nbsp;FSTG &emsp; 
   2.&nbsp;BL &emsp;&emsp;&nbsp;
   3.&nbsp;BD &emsp;&emsp;
-  4.&nbsp;3hr&nbsp;AD
+  4.&nbsp;2hr&nbsp;AD
 </b>
 
 <p id="output"></p>
@@ -23,17 +23,17 @@ Start Date: <input type="date" id="date"><br>
     var startDate = new Date(document.getElementById("date").value);
     var dateList = "";
 
-    for (let i = 1; i < 65; i += 1) {
+    for (let i = 1; i < 57; i += 1) {
       startDate.setDate(startDate.getDate() + 1);
 
       if(startDate.getMonth()<9 && startDate.getDate()<10) {
-        dateList += "0" + (startDate.getMonth()+1) + "-" + "0" + startDate.getDate() + " _____ ";
+        dateList += "0" + (startDate.getMonth()+1) + "-" + "0" + startDate.getDate() + " ______ ";
       } else if (startDate.getMonth()<9) {
-        dateList += "0" + (startDate.getMonth()+1) + "-" + startDate.getDate() + " _____ ";
+        dateList += "0" + (startDate.getMonth()+1) + "-" + startDate.getDate() + " ______ ";
       } else if(startDate.getDate()<10) {
-        dateList += startDate.getMonth()+1 + "-" + "0" + startDate.getDate() + " _____ ";
+        dateList += startDate.getMonth()+1 + "-" + "0" + startDate.getDate() + " ______ ";
       } else {
-        dateList += startDate.getMonth()+1 + "-" + startDate.getDate() + " _____ ";
+        dateList += startDate.getMonth()+1 + "-" + startDate.getDate() + " ______ ";
       }
       if(i%4==0) {
         dateList += "<br><br>";
